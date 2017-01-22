@@ -1,0 +1,107 @@
+$bg-color:   #515f68;
+$bg-nav:     rgba(53, 63, 70, .85);
+$white:      #ffffff;
+$blue:       #4bcaff;
+$nav-height: 18.75vh;
+
+@font-face {
+    font-family: SegoeUIRegular;
+    src: url("../fonts/SegoeUIRegular/SegoeUIRegular.woff") format("woff");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: SegoeUIBold;
+    src: url("../fonts/SegoeUIBold/SegoeUIBold.woff") format("woff");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: SegoeUIItalic;
+    src: url("../fonts/SegoeUIItalic/SegoeUIItalic.woff") format("woff");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: SegoeUILight;
+    src: url("../fonts/SegoeUILight/SegoeUILight.woff") format("woff");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: SegoeUISemiBold;
+    src: url("../fonts/SegoeUISemiBold/SegoeUISemiBold.woff") format("woff");
+    font-style: normal;
+    font-weight: normal;
+}
+
+html {
+  font-size: 14px;
+}
+body {
+  background-color: $bg-color;
+  font-family: SegoeUIRegular;
+}
+p {
+  margin: 1rem 0;
+}
+header {
+  background: url('../images/header.jpg') no-repeat bottom center scroll;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+  text-transform: uppercase;
+}
+nav {
+  height: $nav-height;
+  background-color: $bg-nav;
+  font-family: SegoeUIBold;
+  color: $white;
+}
+.logo-container {
+  height: $nav-height;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  .logo-text{
+    font-size: 2.14rem;
+  }
+  .logo-e-letter{
+    color: $blue;
+  }
+}
+.nav-links {
+  height: $nav-height;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  a {
+    text-decoration: none;
+    border: 2px solid transparent;
+    padding: .71rem 1.23rem;
+  }
+  a:hover, a:active {
+    color: $blue;
+    border: 2px solid $blue;
+    cursor: pointer;
+  }
+}
+.slogan-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh - $nav-height;
+}
+.slogan-text {
+  color: $white;
+  text-decoration: uppercase;
+  font-family: SegoeUILight;
+  font-size: 3rem;
+  text-align: center;
+  p {
+    display: inline-block;
+    background-color: $bg-nav;
+    padding: 1.43rem;
+  }
+}
