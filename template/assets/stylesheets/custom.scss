@@ -1,8 +1,12 @@
-$bg-color:   #515f68;
+$bg-color:   #515f67;
 $bg-nav:     rgba(53, 63, 70, .85);
 $white:      #ffffff;
 $blue:       #4bcaff;
+$holder:     #979797;
 $nav-height: 18.75vh;
+$normal-font: 14px;
+$small-font:  12px;
+$content-padding: 5.71rem;
 
 @font-face {
     font-family: SegoeUIRegular;
@@ -36,14 +40,31 @@ $nav-height: 18.75vh;
 }
 
 html {
-  font-size: 14px;
+  font-size: $normal-font;
 }
 body {
   background-color: $bg-color;
   font-family: SegoeUIRegular;
+  color: $white;
 }
 p {
   margin: 1rem 0;
+}
+h1, h2 {
+  text-transform: uppercase;
+}
+h1 {
+  font-family: SegoeUILight;
+  font-size: 2.14rem;
+}
+.short-bottom-border {
+  width: 3.21rem;
+  border-top: .14rem solid;
+  margin-top: .71rem;
+}
+h2 {
+  font-family: SegoeUISemiBold;
+  font-size: 1.71rem;
 }
 header {
   background: url('../images/header.jpg') no-repeat bottom center scroll;
@@ -57,13 +78,18 @@ nav {
   height: $nav-height;
   background-color: $bg-nav;
   font-family: SegoeUIBold;
-  color: $white;
 }
 .logo-container {
   height: $nav-height;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   .logo-text{
     font-size: 2.14rem;
   }
@@ -73,9 +99,16 @@ nav {
 }
 .nav-links {
   height: $nav-height;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: SegoeUIBold;
+  text-transform: uppercase;
   a {
     text-decoration: none;
     border: 2px solid transparent;
@@ -88,20 +121,90 @@ nav {
   }
 }
 .slogan-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100vh - $nav-height;
 }
 .slogan-text {
-  color: $white;
   text-decoration: uppercase;
   font-family: SegoeUILight;
   font-size: 3rem;
   text-align: center;
   p {
-    display: inline-block;
+    display: inline-block; /* if screen get wide both paragraphs jump into one line*/
     background-color: $bg-nav;
     padding: 1.43rem;
   }
+}
+.content {
+  padding: $content-padding 0;
+}
+.services-container, .twitter-container {
+  background-color: $blue;
+}
+.portfolio-container, .testimonials-container {
+  background-color: $white;
+}
+.services-container {
+  p {
+    font-family: SegoeUISemiBold;
+    font-size: $small-font;
+    line-height: 1.5 * $small-font;
+  }
+}
+.item:first-child {
+  padding-left: 0;
+}
+.item:last-child {
+  padding-right: 0;
+}
+.service-img {
+  margin-bottom: 1.71rem;
+}
+.portfolio-container {
+  color: $bg-color;
+  .wrapper:last-child img {
+    margin-top: 2.14rem;
+  }
+  .nav-links {
+    height: auto;
+  }
+  .heading {
+    margin-bottom: $content-padding;
+  }
+  img {
+    -webkit-filter: brightness(100%);
+            filter: brightness(100%);
+    -webkit-transition:   all 1s ease;
+    transition: all 1s ease;
+    background-color: $holder;
+  }
+  img:hover {
+    -webkit-filter: brightness(20%);
+            filter: brightness(20%);
+    cursor: pointer;
+  }
+  .plus {
+    font-size: 3rem;
+    color: red;
+  }
+}
+.heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: $content-padding / 2;
 }
